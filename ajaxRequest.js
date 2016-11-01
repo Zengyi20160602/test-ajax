@@ -46,9 +46,10 @@ net.ajaxRequest.prototype.loadDate = function(url,method,params){
 net.ajaxRequest.onReadyState = function() {
 	var req = this.req;
 	var ready = req.readyState; //获取请求状态
-	console.log("请求失败,失败状态值：" + ready);
+	
 	if (ready==4){              //请求完成
 		if(req.status==200){    //请求成功
+			cosole.log("请求成功");
 			this.onload.call(this);
 		}else {
 			this.onerror.call(this);    //调用错误处理函数
