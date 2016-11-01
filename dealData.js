@@ -1,4 +1,4 @@
-
+header("Access-Control-Allow-Origin:*");
 var xmldoc;   //定义变量
 function readXml() {
 	var url = "index.xml";
