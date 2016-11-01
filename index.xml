@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 测试ajax的异步载入文件 -->
+<test>
+	<student>
+		<name>ZY</name>
+		<num>007</num>
+		<tel>12345</tel>
+	</student>
+	<student>
+		<name>ZZ</name>
+		<num>009</num>
+		<tel>23456</tel>
+	</student>
+	<student>
+		<name>ZX</name>
+		<num>001</num>
+		<tel>34567</tel>
+	</student>
+</test>
