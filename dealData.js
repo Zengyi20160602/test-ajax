@@ -15,7 +15,7 @@
 			console.log("这里是ie"+xmldoc);
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
-			xmldoc = document.implementation.createDocument("","",null);
+			var xmldoc = document.implementation.createDocument("","",null);
 			xmldoc.onload = function() {
 				console.log("onload是否会执行呢");
 				xmldoc.onload = display(xmldoc);
@@ -27,9 +27,10 @@
 			//webkit BUG,chrome etc.
 			var xmlAjax = new net.ajaxRequest("index.xml",redata);
 			function redata() {
-			 display(this.req.responseText);		     
+			 xmldoc = this.req.responseText;
+				return xmldoc;
 			}
-				
+			display(this.req.responseText);	
 			}
 		
 			}
