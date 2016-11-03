@@ -36,8 +36,9 @@
 			console.log("目前的xmldoc:"+xmldoc);
 			console.log("没有tagname时"+ xmldoc.getElementsByTagName("name")[0]);
 			if(xmldoc.getElementsByTagName("name")[0] == undefined) {
-				xmldoc = this.req.responseXML;
 				console.log("是否载入？");
+				xmldoc = this.req.responseXML;
+				
 			}
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var displayText;
