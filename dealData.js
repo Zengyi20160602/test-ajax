@@ -33,6 +33,7 @@
 		}
 
 		function display() {
+			console.log("此处是否有执行到呢？没错，我是display()");
 			var nameNode,numNode,telNode,displayText;
 			var rootNode,firstNode;
 			rootNode = xmldoc.documentElement;  //获取根节点
