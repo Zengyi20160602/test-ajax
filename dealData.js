@@ -35,7 +35,7 @@
 			}
 		}
 
-		function display() {
+		function display(xmldoc) {
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var nameNode,numNode,telNode,displayText;
 			var rootNode,firstNode;
