@@ -11,6 +11,7 @@
 				}
 			}
 		xmldoc.load(url);
+			console.log("这里是ie"+xmldoc);
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
 			xmldoc = document.implementation.createDocument("","",null);
@@ -24,7 +25,7 @@
 			var xmlAjax = new net.ajaxRequest("index.xml",redata);
 			function redata() {
 			xmldoc = this.req.responseText; 
-			console.log("这里是dealData.js文件，此处返回的xmldoc为："+this.req.responseText);
+			console.log("这里是dealData.js文件chrome下，此处返回的xmldoc为："+xmldoc);
 			return xmldoc;
 			}
 			}
