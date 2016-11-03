@@ -5,19 +5,21 @@
 		var url = "index.xml";
 		if(window.ActiveXObject) {   //判断是否为IE
 			xmldoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmldoc.load(url);
 			xmldoc.onreadystatechange = function() {
 				if(xmldoc.readyState == 4) {
 					display(xmldoc);
 				}
 			}
-		xmldoc.load(url);
+		
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
 			xmldoc = document.implementation.createDocument("","",null);
+			xmldoc.load(url);
 			xmldoc.onload = function() {
 				xmldoc.onload = display(xmldoc);
 				}
-		xmldoc.load(url);
+		
 			}
 		}
 
