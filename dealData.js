@@ -1,16 +1,17 @@
 
 		
 		function readXml() {
-		var xmldoc = null;  //定义变量
+		
 		var url = "index.xml";
 		if(window.ActiveXObject) {   //判断是否为IE
-			xmldoc = new ActiveXObject("Microsoft.XMLDOM");
+			var xmldoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmldoc.load(url);
 			xmldoc.onreadystatechange = function() {
 				if(xmldoc.readyState == 4) {
 					display(xmldoc);
 				}
 			}
-		xmldoc.load(url);
+		
 			console.log("这里是ie"+xmldoc);
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
@@ -26,13 +27,10 @@
 			//webkit BUG,chrome etc.
 			var xmlAjax = new net.ajaxRequest("index.xml",redata);
 			function redata() {
-			xmldoc = this.req.responseText; 
-			console.log("这里是dealData.js文件chrome下，此处返回的xmldoc为："+xmldoc);
-				
-			
+			var display = eval(display(this.req.responseText)); 
+			return display;
 			}
-				if(xmldoc!==null)
-				{display(xmldoc);}
+				
 			}
 		
 			}
