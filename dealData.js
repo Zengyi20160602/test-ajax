@@ -4,6 +4,7 @@
 		var xmldoc;   //定义变量
 		var url = "index.xml";
 		if(window.ActiveXObject) {   //判断是否为IE
+			
 			xmldoc = new ActiveXObject("Microsoft.XMLDOM");
 			xmldoc.load(url);
 			xmldoc.onreadystatechange = function() {
@@ -14,6 +15,7 @@
 		
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
+			console.log("只能考虑不支持处理xml");
 			xmldoc = document.implementation.createDocument("","",null);
 			xmldoc.load(url);
 			xmldoc.onload = function() {
