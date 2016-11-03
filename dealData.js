@@ -1,6 +1,7 @@
 
-		var xmldoc;   //定义变量
+		
 		function readXml() {
+		var xmldoc;   //定义变量
 		var url = "index.xml";
 		if(window.ActiveXObject) {   //判断是否为IE
 			xmldoc = new ActiveXObject("Microsoft.XMLDOM");
