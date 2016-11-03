@@ -15,7 +15,11 @@
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
 			xmldoc = document.implementation.createDocument("","",null);
-			
+			xmldoc.onload = function() {
+				console.log("onload是否会执行呢");
+				xmldoc.onload = display(xmldoc);
+				
+				}
 		try{
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
 			}catch(e){ //捕捉异常
@@ -24,14 +28,10 @@
 			function redata() {
 			xmldoc = this.req.responseText; 
 			console.log("这里是dealData.js文件chrome下，此处返回的xmldoc为："+xmldoc);
-			return xmldoc;
+			display(xmldoc);
 			}
 			}
-		xmldoc.onload = function() {
-				console.log("到底是哪里出了问题");
-				xmldoc.onload = display(xmldoc);
-				
-				}
+		
 			}
 		}
 
