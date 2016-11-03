@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript">
+
 		var xmldoc;   //定义变量
 		function readXml() {
 		var url = "index.xml";
@@ -39,10 +36,4 @@
 		}
 
 		readXml();
-	</script>
-	<title></title>
-</head>
-<body>
 
-</body>
-</html>
