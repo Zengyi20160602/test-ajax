@@ -16,7 +16,7 @@
 	}
 	//回调函数
 	function deal_getInfo() {
-		console.log(this.req.responseText);
+		
 		var display = eval(this.req.responseText);
 		document.getElementById("show").innerHTML = display;
 	}
