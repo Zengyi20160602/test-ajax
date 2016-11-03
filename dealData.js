@@ -34,7 +34,7 @@
 		}
 
 		function display() {
-			var xmldoc = this.req.responseText;
+			var xmldoc = this.req.responseXML;
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var displayText;
 			var nameNode,numNode,telNode;
