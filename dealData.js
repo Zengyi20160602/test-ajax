@@ -27,8 +27,8 @@
 			//webkit BUG,chrome etc.
 			var xmlAjax = new net.ajaxRequest("index.xml",redata);
 			function redata() {
-			var display = display(this.req.responseText); 
-			return display;
+			var displayData = display(this.req.responseText); 
+			return displayData;
 			}
 				
 			}
