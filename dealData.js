@@ -35,6 +35,7 @@
 		function display(xmldoc) {
 			if(xmldoc.getElementsByTagName("name") == null) {
 				xmldoc = this.req.responseXML;
+				console.log("是否载入？");
 			}
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var displayText;
@@ -43,9 +44,9 @@
 			nameNode = xmldoc.getElementsByTagName("name");    
 			numNode = xmldoc.getElementsByTagName("num"); 
 			telNode = xmldoc.getElementsByTagName("tel"); 
-			displayText = "姓名：" + nameNode[1].firstChild.nodeValue + 
-				"\n编号：" + numNode[1].firstChild.nodeValue + 
-				"\n电话：" + telNode[1].firstChild.nodeValue;
+			displayText = "姓名：" + nameNode[1].nodeValue + 
+				"\n编号：" + numNode[1].nodeValue + 
+				"\n电话：" + telNode[1].nodeValue;
 			
 			return displayText;
 		}
