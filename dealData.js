@@ -27,10 +27,10 @@
 			//webkit BUG,chrome etc.
 			var xmlAjax = new net.ajaxRequest("index.xml",redata);
 			function redata() {
-			 xmldoc = this.req.responseText;
-				return xmldoc;
+				xmldoc = this.req.responseText;
+			 	display(xmldoc);	
 			}
-			display(this.req.responseText);	
+			
 			}
 		
 			}
