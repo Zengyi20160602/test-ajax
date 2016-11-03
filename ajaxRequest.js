@@ -49,7 +49,7 @@ net.ajaxRequest.onReadyState = function() {
 	
 	if (ready==4){              //请求完成
 		if(req.status==200){    //请求成功
-			cosole.log("请求成功");
+			console.log("请求成功");
 			this.onload.call(this);
 		}else {
 			this.onerror.call(this);    //调用错误处理函数
