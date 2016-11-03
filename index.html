@@ -12,11 +12,12 @@
 	}
 	//实例化ajax对象
 	function getInfo() {
-		var loader = new net.ajaxRequest("exe-readXml.js",deal_getInfo,onerror,"GET");
+		var loader = new net.ajaxRequest("dealData.js",deal_getInfo,onerror,"GET");
 	}
 	//回调函数
 	function deal_getInfo() {
-		document.getElementById("show").innerHTML = this.req.responseText;
+		var display = eval(this.req.responseText);
+		document.getElementById("show").innerHTML = display;
 	}
 
 	window.onload = function() {
