@@ -17,6 +17,7 @@
 			xmldoc = document.implementation.createDocument("","",null);
 			xmldoc.onload = function() {
 				xmldoc.onload = display(xmldoc);
+				console.log("到底是哪里出了问题");
 				}
 		try{
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
