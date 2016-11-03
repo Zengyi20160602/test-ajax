@@ -31,7 +31,7 @@
 				
 			
 			}
-				if(xmldoc!=="null")
+				if(xmldoc!==null)
 					display(xmldoc);
 			}
 		
