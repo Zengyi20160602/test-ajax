@@ -25,7 +25,7 @@
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
 			}catch(e){ //捕捉异常
 			//webkit BUG,chrome etc.
-			var xmlAjax = new net.ajaxRequest("index.xml",display(this.req.responseText));
+			var xmlAjax = new net.ajaxRequest("index.xml",display);
 			}
 			
 			
@@ -33,7 +33,8 @@
 			}
 		}
 
-		function display(xmldoc) {
+		function display() {
+			var xmldoc = this.req.responseText;
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var nameNode,numNode,telNode,displayText;
 			var rootNode,firstNode;
