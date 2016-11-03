@@ -33,6 +33,7 @@
 		}
 		
 		function display(xmldoc) {
+			console.log("目前的xmldoc:"+xmldoc);
 			if(xmldoc.getElementsByTagName("name") == null) {
 				xmldoc = this.req.responseXML;
 				console.log("是否载入？");
