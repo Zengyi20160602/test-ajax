@@ -32,21 +32,21 @@
 			}
 		}
 		
-		function display(xmldoc) {
-			console.log("目前的xmldoc:"+xmldoc);
-			console.log("没有tagname时"+ xmldoc.getElementsByTagName("name")[0]);
-			if(xmldoc.getElementsByTagName("name")[0] == undefined) {
+		function display(xml) {
+			console.log("目前的xmldoc:"+xml);
+			console.log("没有tagname时"+ xml.getElementsByTagName("name")[0]);
+			if(xml.getElementsByTagName("name")[0] == undefined) {
 				console.log("是否载入？");
-				xmldoc = this.req.responseXML;
+				xml = this.req.responseXML;
 				
 			}
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var displayText;
 			var nameNode,numNode,telNode;
 			
-			nameNode = xmldoc.getElementsByTagName("name");    
-			numNode = xmldoc.getElementsByTagName("num"); 
-			telNode = xmldoc.getElementsByTagName("tel"); 
+			nameNode = xml.getElementsByTagName("name");    
+			numNode = xml.getElementsByTagName("num"); 
+			telNode = xml.getElementsByTagName("tel"); 
 			displayText = "姓名：" + nameNode[1].nodeValue + 
 				"\n编号：" + numNode[1].nodeValue + 
 				"\n电话：" + telNode[1].nodeValue;
