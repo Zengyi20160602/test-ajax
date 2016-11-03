@@ -24,7 +24,7 @@
 			var xmlAjax = new net.ajaxRequest("index.xml",redata);
 			function redata() {
 			xmldoc = this.req.responseXML; 
-
+			console.log("这里是dealData.js文件，此处返回的xmldoc为："+this.req.responseXML);
 			return xmldoc;
 			}
 			}
