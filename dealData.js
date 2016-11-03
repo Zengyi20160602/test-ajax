@@ -42,8 +42,7 @@
 			firstNode = rootNode.children(0);    //访问根节点下的第一个节点
 			for(var i=0;i<rootNode.children.length;i++)
 			{
-				displayText = displayText + 
-					firstNode.children(i).nodeValue + \n;
+				displayText = displayText + firstNode.children(i).nodeValue\n;
 			}
 			return displayText;
 		}
