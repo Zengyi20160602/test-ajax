@@ -43,7 +43,9 @@
 			nameNode = xmldoc.getElementsByTagName("name");    
 			numNode = xmldoc.getElementsByTagName("num"); 
 			telNode = xmldoc.getElementsByTagName("tel"); 
-			displayText = "姓名：" + nameNode(1).nodeValue + "\n编号：" + numNode(1).nodeValue + "\n电话：" + telNode(1).nodeValue;
+			displayText = "姓名：" + nameNode(1).firstChild.nodeValue + 
+				"\n编号：" + numNode(1).firstChild.nodeValue + 
+				"\n电话：" + telNode(1).firstChild.nodeValue;
 			
 			return displayText;
 		}
