@@ -34,6 +34,7 @@
 						"电话:" + telNode.firstChild.nodeValue;
 			return displayText;
 		}
-
+		
+		readXml();
 		
 
