@@ -28,8 +28,10 @@
 			function redata() {
 			xmldoc = this.req.responseText; 
 			console.log("这里是dealData.js文件chrome下，此处返回的xmldoc为："+xmldoc);
-			display(xmldoc);
+				
+			
 			}
+				display(xmldoc);
 			}
 		
 			}
