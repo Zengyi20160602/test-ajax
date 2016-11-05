@@ -28,10 +28,11 @@
 			//webkit BUG,chrome etc.
 			var xmlAjax = new net.ajaxRequest("index.xml",get_xml);
 			function get_xml() {
-				display(this.req.responseXML);
-				
+				var ajax_xmldoc = document.implementation.createDocument("","",null);
+				ajax_xmldoc = this.req.responseXML;
+				return ajax_xmldoc;
 				}
-			
+			display(get_xml());
 			}
 		
 			}
