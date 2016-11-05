@@ -30,10 +30,10 @@
 			
 			
 			function get_xml() {
-				var gxml = this.req.responseXML;
-				return gxml;
+				return this.req.responseXML;
+				
 			}
-			var getxml = new net.ajaxRequest("index.xml",get_xml).onload();
+			var getxml = new net.ajaxRequest("index.xml",get_xml).onReadyState();
 			console.log(getxml);
 			
 			}
