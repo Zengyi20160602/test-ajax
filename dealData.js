@@ -8,6 +8,7 @@
 			xmldoc.load(url);
 			xmldoc.onreadystatechange = function() {
 				if(xmldoc.readyState == 4) {
+					console.log("onreadystatechange是否会执行呢");
 					distext = display(xmldoc);
 					return distext;
 				}
@@ -17,7 +18,7 @@
 		}
 		else if(document.implementation&&document.implementation.createDocument) {   //判断是否为Mozilla
 			xmldoc = document.implementation.createDocument("","",null);
-			console.log("11111");
+			
 			xmldoc.onload = function() {
 				console.log("onload是否会执行呢");
 				distext = display(xmldoc);
