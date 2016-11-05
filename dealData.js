@@ -31,7 +31,11 @@
 				xmldoc = this.req.responseXML;
 				return xmldoc;
 				}
-			console.log("此处xmldoc是否有内容："+xmldoc.getElementsByTagName("name")[0]);
+			xmldoc.onreadystatechange = function() {
+				if(xmldoc.readyState == 4){
+					console.log("此处xmldoc是否有内容："+xmldoc.getElementsByTagName("name")[0]);
+				}
+			}
 			}
 		
 			}
