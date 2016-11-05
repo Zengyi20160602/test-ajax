@@ -33,8 +33,7 @@
 		}
 		
 		function display(xml) {
-			console.log("目前的xmldoc:"+xml);
-			console.log("没有tagname时"+ xml.getElementsByTagName("name")[0]);
+			
 			if(xml.getElementsByTagName("name")[0] == undefined) {
 				console.log("是否载入？");
 				xml = this.req.responseXML;
