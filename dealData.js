@@ -27,8 +27,10 @@
 			}catch(e){ //捕捉异常
 			//webkit BUG,chrome etc.
 			var getxml = new net.ajaxRequest("index.xml",get_xml);
-			function get_xml() {}
-			display(getxml.responseXML);
+			function get_xml() {
+				console.log(this.req.responseText);
+			}
+			
 			
 			}
 		
