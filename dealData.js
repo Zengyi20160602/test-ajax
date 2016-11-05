@@ -40,7 +40,7 @@
 		function display(xml) {
 
 			console.log("此处是否有执行到呢？没错，我是display()");
-			console.log("xml.getElementsByTagName("name")："+xml.getElementsByTagName("name")[0]);
+			
 			var displayText;
 			var nameNode,numNode,telNode;
 			
