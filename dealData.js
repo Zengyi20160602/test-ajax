@@ -33,7 +33,7 @@
 				var gxml = this.req.responseXML;
 				return gxml;
 			}
-			var getxml = new net.ajaxRequest("index.xml",get_xml).get_xml();
+			var getxml = new net.ajaxRequest("index.xml",get_xml).onload();
 			console.log(getxml);
 			
 			}
