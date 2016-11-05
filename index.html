@@ -7,17 +7,18 @@
 	
 	<script type="text/javascript">
 	//错误处理的方法
+		var loader;
 	function onerror() {
 		alert("您的操作有误！");
 	}
 	//实例化ajax对象
 	function getInfo() {
-		var loader = new net.ajaxRequest("dealData.js",deal_getInfo,onerror,"GET");
-		console.log("loder是否可用："+loader.responseText);
+	   loader = new net.ajaxRequest("dealData.js",deal_getInfo,onerror,"GET");
+		
 	}
 	//回调函数
 	function deal_getInfo() {
-		
+		console.log("loader是否可用："+loader.responseText);
 		//var display = eval(this.req.responseText);
 		//document.getElementById("show").innerHTML = display;
 	}
