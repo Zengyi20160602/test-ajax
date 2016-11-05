@@ -27,14 +27,17 @@
 		try{
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
 			}catch(e){ //捕捉异常
-			
+			var otherajax = new net.ajaxRequest("index.xml",get_xml);
 			
 			function get_xml() {
-				return this.req.responseXML;
-				
+				var getxml = this.req.responseXML;
+				var display = "姓名：" +getxml.getElementsByTagName("name")[1].childNodes[0].nodeValue + 
+				"\n编号：" + getxml.getElementsByTagName("num")[1].childNodes[0].nodeValue + 
+				"\n电话：" + getxml.getElementsByTagName("tel")[1].childNodes[0].nodeValue;
+				document.getElementById("show").innerHTML = display;
 			}
-			var getxml = new net.ajaxRequest("index.xml",get_xml).onReadyState;
-			console.log(getxml);
+			
+			
 			
 			}
 		
@@ -55,7 +58,7 @@
 				"\n编号：" + numNode[1].nodeValue + 
 				"\n电话：" + telNode[1].nodeValue;
 			
-			return displayText;
+			document.getElementById("show").innerHTML = displayText;
 		}
 		
 		readXml();
