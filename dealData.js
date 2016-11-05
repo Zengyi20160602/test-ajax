@@ -26,12 +26,10 @@
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
 			}catch(e){ //捕捉异常
 			//webkit BUG,chrome etc.
-			display(new net.ajaxRequest("index.xml",get_xml));
-			function get_xml() {
-				var ajax_xmldoc = document.implementation.createDocument("","",null);
-				ajax_xmldoc = this.req.responseXML;
-				return ajax_xmldoc;
-				}
+			var getxml = new net.ajaxRequest("index.xml",get_xml);
+			function get_xml() {}
+			display(getxml.responseXML);
+			
 			}
 		
 			}
