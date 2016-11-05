@@ -26,19 +26,18 @@
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
 			}catch(e){ //捕捉异常
 			//webkit BUG,chrome etc.
-			var xmlAjax = new net.ajaxRequest("index.xml",display(xmldoc));
+			var xmlAjax = new net.ajaxRequest("index.xml",get_xml);
+			function get_xml() {
+				xmldoc = this.req.responseXML;
+				display(xmldoc);
+				}
 			}
 		
 			}
 		}
 		
 		function display(xml) {
-			
-			if(xml.getElementsByTagName("name")[0] == undefined) {
-				console.log("是否载入？");
-				xml = this.req.responseXML;
-				
-			}
+
 			console.log("此处是否有执行到呢？没错，我是display()");
 			var displayText;
 			var nameNode,numNode,telNode;
