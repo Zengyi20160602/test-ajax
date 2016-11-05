@@ -31,7 +31,7 @@
 				xmldoc = this.req.responseXML;
 				return xmldoc;
 				}
-			console.log("此处xmldoc是否有内容："+xmldoc.getElementsByTagName("name"));
+			console.log("此处xmldoc是否有内容："+xmldoc.getElementsByTagName("name")[0]);
 			}
 		
 			}
