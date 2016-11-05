@@ -13,12 +13,13 @@
 	//实例化ajax对象
 	function getInfo() {
 		var loader = new net.ajaxRequest("dealData.js",deal_getInfo,onerror,"GET");
+		console.log("loder是否可用："+loader.responseText);
 	}
 	//回调函数
 	function deal_getInfo() {
 		
-		var display = eval(this.req.responseText);
-		document.getElementById("show").innerHTML = display;
+		//var display = eval(this.req.responseText);
+		//document.getElementById("show").innerHTML = display;
 	}
 
 	window.onload = function() {
