@@ -40,7 +40,7 @@
 		function display(xml) {
 
 			console.log("此处是否有执行到呢？没错，我是display()");
-			
+			console.log(xml);
 			var displayText;
 			var nameNode,numNode,telNode;
 			
