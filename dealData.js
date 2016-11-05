@@ -1,14 +1,15 @@
 
 		
 		function readXml() {
-		var xmldoc;
+		var xmldoc,distext;
 		var url = "index.xml";
 		if(window.ActiveXObject) {   //判断是否为IE
 			xmldoc = new ActiveXObject("Microsoft.XMLDOM");
 			xmldoc.load(url);
 			xmldoc.onreadystatechange = function() {
 				if(xmldoc.readyState == 4) {
-					display(xmldoc);
+					distext = display(xmldoc);
+					return distext;
 				}
 			}
 		
@@ -19,18 +20,21 @@
 			console.log("11111");
 			xmldoc.onload = function() {
 				console.log("onload是否会执行呢");
-				xmldoc.onload = display(xmldoc);
+				distext = display(xmldoc);
+				return distext;
 				
 				}
 		try{
 			xmldoc.load(url); //chrome浏览器在这一行会报错，document对象没有load()方法。
 			}catch(e){ //捕捉异常
-			//webkit BUG,chrome etc.
-			var getxml = new net.ajaxRequest("index.xml",get_xml);
-			function get_xml() {
-				display(this.req.responseXML);
-			}
 			
+			
+			function get_xml() {
+				var gxml = this.req.responseXML;
+				return gxml;
+			}
+			var getxml = new net.ajaxRequest("index.xml",get_xml).get_xml();
+			console.log(getxml);
 			
 			}
 		
