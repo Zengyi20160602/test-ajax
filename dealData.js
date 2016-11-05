@@ -33,7 +33,7 @@
 				return this.req.responseXML;
 				
 			}
-			var getxml = new net.ajaxRequest("index.xml",get_xml).onReadyState();
+			var getxml = new net.ajaxRequest("index.xml",get_xml).onReadyState;
 			console.log(getxml);
 			
 			}
