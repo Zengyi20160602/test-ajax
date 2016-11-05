@@ -29,8 +29,9 @@
 			var xmlAjax = new net.ajaxRequest("index.xml",get_xml);
 			function get_xml() {
 				xmldoc = this.req.responseXML;
-				display(xmldoc);
+				return xmldoc;
 				}
+			console.log("此处xmldoc是否有内容："+xmldoc.getElementsByTagName("name"));
 			}
 		
 			}
