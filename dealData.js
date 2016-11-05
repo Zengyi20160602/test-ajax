@@ -31,9 +31,9 @@
 			
 			function get_xml() {
 				var getxml = this.req.responseXML;
-				var display = "姓名：" +getxml.getElementsByTagName("name")[1].childNodes[0].nodeValue + 
-				"\n编号：" + getxml.getElementsByTagName("num")[1].childNodes[0].nodeValue + 
-				"\n电话：" + getxml.getElementsByTagName("tel")[1].childNodes[0].nodeValue;
+				var display = "姓名：" +getxml.getElementsByTagName("name")[1].childNodes[0].nodeValue + "<br>"
+				+ "编号：" + getxml.getElementsByTagName("num")[1].childNodes[0].nodeValue + "<br>"
+				+ "\n电话：" + getxml.getElementsByTagName("tel")[1].childNodes[0].nodeValue;
 				document.getElementById("show").innerHTML = display;
 			}
 			
@@ -54,9 +54,9 @@
 			nameNode = xml.getElementsByTagName("name");    
 			numNode = xml.getElementsByTagName("num"); 
 			telNode = xml.getElementsByTagName("tel"); 
-			displayText = "姓名：" + nameNode[1].nodeValue + 
-				"\n编号：" + numNode[1].nodeValue + 
-				"\n电话：" + telNode[1].nodeValue;
+			displayText = "姓名：" + nameNode[1].nodeValue + "<br>"
+				+ "编号：" + numNode[1].nodeValue + "<br>"
+				+ "电话：" + telNode[1].nodeValue;
 			
 			document.getElementById("show").innerHTML = displayText;
 		}
