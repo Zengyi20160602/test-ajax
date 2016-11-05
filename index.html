@@ -18,9 +18,7 @@
 	}
 	//回调函数
 	function deal_getInfo() {
-		
-		var display = eval(this.req.responseText);
-		document.getElementById("show").innerHTML = display;
+		eval(this.req.responseText);
 	}
 
 	window.onload = function() {
