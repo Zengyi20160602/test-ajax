@@ -55,9 +55,9 @@
 			nameNode = xml.getElementsByTagName("name");    
 			numNode = xml.getElementsByTagName("num"); 
 			telNode = xml.getElementsByTagName("tel"); 
-			displayText = "姓名：" + nameNode[1].nodeValue + "<br>"
-				+ "编号：" + numNode[1].nodeValue + "<br>"
-				+ "电话：" + telNode[1].nodeValue;
+			displayText = "姓名：" + nameNode[1].childNodes[0].nodeValue + "<br>"
+				+ "编号：" + numNode[1].childNodes[0].nodeValue + "<br>"
+				+ "电话：" + telNode[1].childNodes[0].nodeValue;
 			
 			document.getElementById("show").innerHTML = displayText;
 		}
