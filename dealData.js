@@ -28,7 +28,7 @@
 			//webkit BUG,chrome etc.
 			var getxml = new net.ajaxRequest("index.xml",get_xml);
 			function get_xml() {
-				console.log(this.req.responseText);
+				display(this.req.responseXML);
 			}
 			
 			
